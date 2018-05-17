@@ -1,3 +1,5 @@
+const EventBus = new Vue();
+
 const inputComponent = {
   template: `<input :placeholder="placeholder" v-model="input" @keyup.enter="monitorEnterKey" class="input is-small" type="text" />`,
   props: ["placeholder"],
@@ -8,7 +10,7 @@ const inputComponent = {
   },
   methods: {
     monitorEnterKey() {
-      this.$emit("add-note", {
+      EventBus.$emit("add-note", {
         note: this.input,
         timestamp: new Date().toLocaleString()
       });
