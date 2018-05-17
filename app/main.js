@@ -21,6 +21,9 @@ const inputComponent = {
 
 new Vue({
   el: "#app",
+  created() {
+    EventBus.$on("add-note", event => this.addNote(event));
+  },
   components: {
     "input-component": inputComponent
   },
