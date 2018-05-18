@@ -25,7 +25,8 @@ new Vue({
     EventBus.$on("add-note", event => this.addNote(event));
   },
   components: {
-    "input-component": inputComponent
+    "input-component": inputComponent,
+    "note-count-component": noteCountComponent
   },
   data: {
     notes: [],
